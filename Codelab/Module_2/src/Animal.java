@@ -13,9 +13,9 @@ public class Animal {
 
     //fungsi yang akan dipanggil di Main.java
     public void displayInfo() {
-        System.out.println("Nama: " + name);
-        System.out.println("Jenis: " + type);
-        System.out.println("Suara: " + sound);
+        System.out.println("Name: " + name);
+        System.out.println("Type: " + type);
+        System.out.println("Sounds: " + sound);
         System.out.println();
     }
 }

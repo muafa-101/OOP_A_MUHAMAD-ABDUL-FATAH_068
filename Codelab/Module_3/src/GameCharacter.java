@@ -7,23 +7,23 @@ public class GameCharacter {
         this.health = health;
     }
 
-    public String setName() {
-        this.name = name;
-    }
-
-    public String getName() {
+    public String getHeroName() {
         return name;
     }
 
-    public int setHealth(int health) {
-        this.health = health;
+    public void setHeroName(String name) {
+        this.name = name;
     }
 
-    public int gethealth() {
+    public int getHeroHealth() {
         return health;
     }
 
-    public void attack(GameCharacter target) {
+    public void setHeroHealth(int health) {
+        this.health = health;
+    }
 
+    public void attack(GameCharacter target) {
+        System.out.println(this.name + " attacks " + target.getHeroName());
     }
 }

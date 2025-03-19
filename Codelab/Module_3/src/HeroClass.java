@@ -5,9 +5,10 @@ public class HeroClass extends GameCharacter {
 
     @Override
     public void attack(GameCharacter target) {
-        System.out.println(getHeroName() + " attacks " + target.getHeroName() + " using a sword!");
-        int newHealth = target.getHeroHealth() - 20;
+        //brimstone attack venom with vandal prime, damage =40 hp
+        System.out.println(getHeroName() + " attacks " + target.getHeroName() + " Vandal Prime");
+        int newHealth = target.getHeroHealth() - 40;
         target.setHeroHealth(newHealth);
-        System.out.println(target.getHeroHealth() + "'s latest health: " + target.getHeroHealth());
+        System.out.println(target.getHeroName() + " health: " + target.getHeroHealth());
     }
 }

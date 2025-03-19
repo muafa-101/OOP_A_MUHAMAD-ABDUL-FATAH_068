@@ -1,4 +1,4 @@
-public class GameCharacter {
+public class GameCharacter {//atribut untuk naam hero dan jumlah hp
     private String name;
     private int health;
 
@@ -23,6 +23,7 @@ public class GameCharacter {
         this.health = health;
     }
 
+    //method target to attack agent
     public void attack(GameCharacter target) {
         System.out.println(this.name + " attacks " + target.getHeroName());
     }

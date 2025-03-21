@@ -5,7 +5,7 @@ public class AdminClass_Module_3 extends UserClass_Module_3 {
 
     @Override
     public void login(UserClass_Module_3 user){
-        
+
     }
 
     }

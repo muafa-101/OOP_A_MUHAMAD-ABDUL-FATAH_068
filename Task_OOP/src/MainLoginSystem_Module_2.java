@@ -9,9 +9,12 @@ public class MainLoginSystem_Module_2 {
         System.out.print("Enter your choice :");
 
         int loginType = sc.nextInt();
-        if(loginType == 1){
+        if
+        (loginType == 1){
             admin.LoginAdmin();
-        }
+        }else if
+        (loginType == 2){
+            admin.LoginStudent();}
 
     }
 }

@@ -1,34 +1,45 @@
+
+// 1. User Class (as a superclass)
 public class UserClass_Module_3 {
-    private String name;
-    private String nim; // konsisten menggunakan String
+    private String name;       // Encapsulated attribute
+    private String studentId;  // Encapsulated attribute
 
-    public UserClass_Module_3(String name, String nim) {
+    // Constructor to initialize name and studentId
+    public UserClass_Module_3(String name, String studentId) {
         this.name = name;
-        this.nim = nim;
+        this.studentId = studentId;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
 
+    // Getter for name
     public String getName() {
         return name;
     }
 
-    public void setNim(String nim) { // perbaikan nama method setter
-        this.nim = nim;
+    // Setter for name
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getNim() { // perbaikan nama method getter dan tipe kembalian
-        return nim;
+    // Getter for studentId
+    public String getStudentId() {
+        return studentId;
     }
 
+    // Setter for studentId
+    public void setStudentId(String studentId) {
+        this.studentId = studentId;
+    }
+
+    // login() method to be overridden by subclasses
     public boolean login() {
-        return false;
+        System.out.println("User login method called (should be overridden)");
+        return false; // Default implementation
     }
 
-    public void displayinfo() { // perbaikan method displayInfo
-        System.out.println("Name: " + this.name);
-        System.out.println("NIM: " + this.nim);
+    // displayInfo() method to display user information
+    public void displayInfo() {
+        System.out.println("Name: " + name);
+        System.out.println("Student ID: " + studentId);
     }
 }

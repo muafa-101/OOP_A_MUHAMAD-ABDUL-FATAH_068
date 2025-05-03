@@ -12,14 +12,6 @@ public class AdminClass_Module_3 extends UserClass_Module_3 {
 
     // Override login()
     @Override
-<<<<<<< HEAD
-    public void login(UserClass_Module_3 user){
-        if this.name.equals(user.name)
-    }
-
-}
-
-=======
     public boolean login() {
         if (this.username.equals(defaultUsername) && this.password.equals(defaultPassword)) {
             return true;
@@ -48,4 +40,3 @@ public class AdminClass_Module_3 extends UserClass_Module_3 {
         System.out.println("Password changed successfully!");
     }
 }
->>>>>>> a1ad0308844ea5f42962a3e22fe2ea8fcd4b0aca

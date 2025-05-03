@@ -7,11 +7,7 @@ public class UserClass_Module_3 {
     // Constructor to initialize name and studentId
     public UserClass_Module_3(String name, String studentId) {
         this.name = name;
-<<<<<<< HEAD
-        this.nim = nim;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
-=======
         this.studentId = studentId;
->>>>>>> a1ad0308844ea5f42962a3e22fe2ea8fcd4b0aca
     }
 
 

@@ -1,33 +1,49 @@
+
+// 1. User Class (as a superclass)
 public class UserClass_Module_3 {
-    String name;
-    int nim;
+    private String name;       // Encapsulated attribute
+    private String studentId;  // Encapsulated attribute
 
-    public UserClass_Module_3(String name, int nim) {
+    // Constructor to initialize name and studentId
+    public UserClass_Module_3(String name, String studentId) {
         this.name = name;
+<<<<<<< HEAD
         this.nim = nim;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+=======
+        this.studentId = studentId;
+>>>>>>> a1ad0308844ea5f42962a3e22fe2ea8fcd4b0aca
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
 
+    // Getter for name
     public String getName() {
         return name;
     }
 
-    public void setNIM(int nim) {
-        this.nim = nim;
+    // Setter for name
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public int getNIM() {
-        return nim;
+    // Getter for studentId
+    public String getStudentId() {
+        return studentId;
     }
 
-    public void displayinfo(String name, int NIM) {
-        System.out.println("Name: " + this.name );
-        System.out.println("NIM: " + this.nim);
+    // Setter for studentId
+    public void setStudentId(String studentId) {
+        this.studentId = studentId;
     }
-    public void login(UserClass_Module_3 user) {
 
+    // login() method to be overridden by subclasses
+    public boolean login() {
+        System.out.println("User login method called (should be overridden)");
+        return false; // Default implementation
+    }
+
+    // displayInfo() method to display user information
+    public void displayInfo() {
+        System.out.println("Name: " + name);
+        System.out.println("Student ID: " + studentId);
     }
 }

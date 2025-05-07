@@ -26,17 +26,19 @@ public class Admin_Module_4 extends User_Module_4 implements AdminActions {
 
     @Override
     void displayAppMenu() {
-        System.out.println("Admin Menu\n1.Manage Item\n2.Manage Users\n3.Exit\nEnter Your Choice: ");
-        int option = sc.nextInt();
-        switch (option) {
-            case 1:
-                manageItem();
-                break;
-            case 2:
-                manageUsers();
-                break;
-            case 3:
-                System.exit(0);
+        for(;;) {
+            System.out.println("Admin Menu\n1.Manage Item\n2.Manage Users\n3.Exit\nEnter Your Choice: ");
+            int option = sc.nextInt();
+            switch (option) {
+                case 1:
+                    manageItem();
+                    break;
+                case 2:
+                    manageUsers();
+                    break;
+                case 3:
+                    System.exit(0);
+            }
         }
     }
 

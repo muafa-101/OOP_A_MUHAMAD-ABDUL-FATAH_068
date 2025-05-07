@@ -24,33 +24,38 @@ public class Mahasiswa_Module_4 extends User_Module_4 implements MahasiswaAction
 
     @Override
     void displayAppMenu() {
-        System.out.println("User Menu\n1. Report Item\n2. View Reported item\n3. Exit\nEnter your choice: ");
-        int option = sc.nextInt();
-        switch (option) {
-            case 1:
-                reportItem();
-                break;
-            case 2:
-                viewReportedItem();
-                break;
-            case 3:
-                System.exit(0);
+        for(;;) {
+            System.out.println("User Menu\n1. Report Item\n2. View Reported item\n3. Exit\nEnter your choice: ");
+            String option = sc.nextLine();
+            switch (option) {
+                case "1":
+                    reportItem();
+                    break;
+                case "2":
+                    viewReportedItem();
+                    break;
+                case "3":
+                    System.exit(0);
+                default:
+                    System.out.println("Invalid choice");
+            }
         }
     }
 
     @Override
     public void reportItem() {
-        System.out.println("Item Name");
+        System.out.println("Item Name: ");
         String itemName = sc.nextLine();
-        System.out.println("Item Description");
+        System.out.println("Item Description: ");
         String itemDescription = sc.nextLine();
-        System.out.println("Last Found");
+        System.out.println("Last Found: ");
         String lastFound = sc.nextLine();
     }
 
     @Override
     public void viewReportedItem() {
         System.out.println("View Reported Item Not Available");
+
     }
 
 

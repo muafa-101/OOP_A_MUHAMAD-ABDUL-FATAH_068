@@ -95,6 +95,7 @@ public class UMM_LIBRARY extends JDialog{
                 {
                     e1.printStackTrace();
                 }
+                table_load();
             }
         });
 
@@ -108,10 +109,100 @@ public class UMM_LIBRARY extends JDialog{
                     String idBuku, judulBuku;
                     idBuku = txSearch.getText();
                     judulBuku = txSearch.getText();
+                    String searchTerm = txSearch.getText();
+
+                    pst = con.prepareStatement("SELECT idBuku, judulBuku, status FROM buku where idBuku  LIKE ? OR judulBuku LIKE ?");
+                    pst.setString(1, "%" + searchTerm + "%");
+                    pst.setString(2, "%" + searchTerm + "%");
+                    rs = pst.executeQuery();
+
+                    if(rs.next()==true)
+                    {
+                        idBuku = rs.getString(1);
+                        judulBuku = rs.getString(2);
+                        String status = rs.getString(3);
+
+                        tfID.setText(idBuku);
+                        tfTitle.setText(judulBuku);
+                        tfStatus.setSelectedIndex(Integer.parseInt(status));
+                    }else
+                    {
+                        tfID.setText("");
+                        tfTitle.setText("");
+                        tfStatus.setSelectedIndex(0);
+                        JOptionPane.showMessageDialog(null, "invalid data search");
+                    }
                 }
+                catch (SQLException ex)
+                {
+
+                }
+                table_load();
             }
         });
-    }
-}
+
+
+        updateButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String idBuku, judulBuku, status;
+                idBuku = tfID.getText();
+                judulBuku = tfTitle.getText();
+                status = tfStatus.getSelectedItem().toString();
+
+
+                try {
+                    pst = con.prepareStatement("UPDATE buku SET  judulBuku = ?, status = ? WHERE idBuku = ?");
+                    pst.setString(1, idBuku);
+                    pst.setString(2, judulBuku);
+                    pst.setString(3, status);
+
+                    pst.executeUpdate();
+                    JOptionPane.showMessageDialog(null, "Data Berhasil Di Update");
+                    table_load();
+                    tfID.setText("");
+                    tfTitle.setText("");
+                    tfStatus.setSelectedIndex(0);
+                    tfID.requestFocus();
+                } catch (SQLException e1) {
+                    e1.printStackTrace();
+                }
+                table_load();
+            }
+            });
+
+
+        deleteButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String idBook;
+                idBook = tfID.getText();
+
+                try
+                {
+                    pst = con.prepareStatement("DELETE FROM buku WHERE idBuku = ?");
+                    pst.setString(1,idBook);
+
+                    pst.executeUpdate();
+                    JOptionPane.showMessageDialog(null, "Data Berhasil Di Delete");
+                    table_load();
+                    tfID.setText("");
+                    tfTitle.setText("");
+                    tfStatus.setSelectedIndex(0);
+                    tfID.requestFocus();
+                }
+                catch (SQLException e1)
+                {
+                    e1.printStackTrace();
+                }
+                table_load();
+            }
+        });
+
+
+
+    }//umm library
+
+}//keseluruhan code
 
 

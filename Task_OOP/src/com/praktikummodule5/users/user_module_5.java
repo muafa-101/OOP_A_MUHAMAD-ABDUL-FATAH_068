@@ -1,7 +1,8 @@
 package com.praktikummodule5.users;
 
 public abstract class user_module_5 {
-    protected String username, password;
+    public String username;
+    public String password;
 
     public user_module_5(String username, String password) {
         this.username = username;
@@ -9,5 +10,5 @@ public abstract class user_module_5 {
     }
 
     public abstract boolean login();
-    abstract void displayAppMenu();
+    public abstract void displayAppMenu();
 }

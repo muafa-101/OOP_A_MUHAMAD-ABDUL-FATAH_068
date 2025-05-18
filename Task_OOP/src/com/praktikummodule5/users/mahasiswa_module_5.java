@@ -1,6 +1,8 @@
 package com.praktikummodule5.users;
 
 import com.praktikummodule5.action.mahasiswaActions;
+import com.praktikummodule5.data.datalist;
+import com.praktikummodule5.data.item_module_5;
 import com.praktikummodule5.users.user_module_5;
 
 import java.util.Scanner;
@@ -26,7 +28,7 @@ import java.util.Scanner;
         }
 
         @Override
-        void displayAppMenu() {
+        public void displayAppMenu() {
             for(;;) {
                 System.out.println("User Menu\n1. Report Item\n2. View Reported item\n3. Exit\nEnter your choice: ");
                 String option = sc.nextLine();
@@ -47,19 +49,52 @@ import java.util.Scanner;
 
         @Override
         public void reportItem() {
-            System.out.println("Item Name: ");
-            String itemName = sc.nextLine();
-            System.out.println("Item Description: ");
-            String itemDescription = sc.nextLine();
-            System.out.println("Last Found: ");
-            String lastFound = sc.nextLine();
+            Scanner scanner = new Scanner(System.in);
+
+            try {
+                System.out.print("Nama Barang: ");
+                String itemName = scanner.nextLine();
+
+                System.out.print("Deskripsi: ");
+                String description = scanner.nextLine();
+
+                System.out.print("Lokasi Kehilangan: ");
+                String location = scanner.nextLine();
+
+                // Buat objek Item dan set status ke "Reported"
+                item_module_5 item = new item_module_5(itemName, description, location, "Reported");
+
+                // Tambahkan ke itemlist pusat
+                datalist.itemlist.add(item);
+
+                System.out.println("Barang berhasil dilaporkan!");
+            } catch (Exception e) {
+                System.out.println("Terjadi kesalahan saat input. Silakan coba lagi.");
+            }
         }
+
 
         @Override
         public void viewReportedItem() {
-            System.out.println("View Reported Item Not Available");
-
+            if (datalist.itemlist.isEmpty()) {
+                System.out.println("Belum ada laporan barang.");
+            } else {
+                System.out.println("Daftar Barang yang Dilaporkan:");
+                for (item_module_5 item : datalist.itemlist) {
+                    if (item.getStatus().equalsIgnoreCase("Reported")) {
+                        System.out.println("Nama: " + item.getItemName());
+                        System.out.println("Deskripsi: " + item.getDescription());
+                        System.out.println("Lokasi: " + item.getLocation());
+                        System.out.println("-----------------------------");
+                    }
+                }
+            }
         }
+
+        public String getNim() {
+            return username; // Karena NIM disimpan di username
+        }
+
 
 
     }

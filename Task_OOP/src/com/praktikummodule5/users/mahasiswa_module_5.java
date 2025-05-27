@@ -61,7 +61,7 @@ import java.util.Scanner;
                 System.out.print("Lokasi Kehilangan: ");
                 String location = scanner.nextLine();
 
-                // Buat objek Item dan set status ke "Reported"
+                // bikin objek Item dan ganti status ke "Reported"
                 item_module_5 item = new item_module_5(itemName, description, location, "Reported");
 
                 // Tambahkan ke itemlist pusat

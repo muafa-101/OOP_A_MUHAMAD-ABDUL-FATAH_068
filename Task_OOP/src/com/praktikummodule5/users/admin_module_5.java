@@ -4,9 +4,6 @@ package com.praktikummodule5.users;
 import com.praktikummodule5.action.adminAction;
 import com.praktikummodule5.data.datalist;
 import com.praktikummodule5.data.item_module_5;
-import com.praktikummodule5.users.user_module_5;
-
-import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 

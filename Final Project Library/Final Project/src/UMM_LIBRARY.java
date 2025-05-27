@@ -2,11 +2,13 @@ import com.mysql.cj.protocol.Resultset;
 import net.proteanit.sql.DbUtils;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.*;
 
 public class UMM_LIBRARY extends JDialog{
+    public Container panelperpus;
     private JPanel loginPanel;
     private JTextField tfID;
     private JTextField tfTitle;
